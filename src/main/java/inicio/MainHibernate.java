@@ -17,13 +17,13 @@ public class MainHibernate {
     	Session sesion = sf.openSession();
     	sesion.getTransaction().begin();
     	
-    	Matricula matricula = new Matricula(1,500.0f,"2º DAM", new Alumno());
+    	Matricula matricula = new Matricula(500.0f,"2º DAM", new Alumno());
     	sesion.save(matricula);
-    	Alumno miAlumno1 = new Alumno(2,"Nacho","Lorenzo",45,matricula);
+    	Alumno miAlumno1 = new Alumno("Nacho","Lorenzo",45,matricula);
     	sesion.save(matricula);
     	
     	matricula.setAlumno(miAlumno1);
-    	Alumno miAlumno2 = new Alumno(25,"Pepe","Jordido",43, matricula);
+    	Alumno miAlumno2 = new Alumno("Pepe","Jordido",43, matricula);
     	matricula.setAlumno(miAlumno2);
     	sesion.save(matricula);
 

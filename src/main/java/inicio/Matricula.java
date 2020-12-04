@@ -22,8 +22,8 @@ public class Matricula {
 	@Id 
 	@GeneratedValue(generator = "foreigngen")
 	@GenericGenerator(strategy = "foreign", name="foreigngen", parameters = @Parameter(name="property", value = "alumno") )
-	@OneToOne(cascade = CascadeType.ALL) 
-	@PrimaryKeyJoinColumn
+	//@OneToOne(cascade = CascadeType.ALL) 
+	//@PrimaryKeyJoinColumn
 	private int idAlumno;
 	@Column
 	private float coste;
@@ -39,9 +39,9 @@ public class Matricula {
 	 * @param nombre
 	 * @param alumno
 	 */
-	public Matricula(int idAlumno, float coste, String nombre, Alumno alumno) {
+	public Matricula(float coste, String nombre, Alumno alumno) {
 		super();
-		this.idAlumno = idAlumno;
+
 		this.coste = coste;
 		this.nombre = nombre;
 		this.alumno = alumno;

@@ -30,9 +30,8 @@ public class Alumno {
 	@PrimaryKeyJoinColumn
 	private Matricula matricula;
 	
-	public Alumno(int idAlumno, String nombre, String apellido, int edad, Matricula matricula) {
+	public Alumno(String nombre, String apellido, int edad, Matricula matricula) {
 		super();
-		this.idAlumno = idAlumno;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
