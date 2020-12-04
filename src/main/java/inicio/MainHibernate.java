@@ -18,17 +18,15 @@ public class MainHibernate {
     	sesion.getTransaction().begin();
     	
     	Matricula matricula = new Matricula(500.0f,"2º DAM", new Alumno());
-    	sesion.save(matricula);
-    	Alumno miAlumno1 = new Alumno("Nacho","Lorenzo",45,matricula);
+    	Alumno miAlumno1 = new Alumno("Nacho1","Lorenzo",45,matricula);
+    	matricula.setAlumno(miAlumno1);
     	sesion.save(matricula);
     	
-    	matricula.setAlumno(miAlumno1);
-    	Alumno miAlumno2 = new Alumno("Pepe","Jordido",43, matricula);
+    	matricula = new Matricula(500.0f,"2º DAM", new Alumno());
+    	Alumno miAlumno2 = new Alumno("Pepe2","Jordido",43, matricula);
     	matricula.setAlumno(miAlumno2);
     	sesion.save(matricula);
 
-    	sesion.save(miAlumno1);
-    	sesion.save(miAlumno2);
     	sesion.getTransaction().commit();
     	
     	sesion.close();
